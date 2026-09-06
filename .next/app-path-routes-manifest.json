@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/account/page": "/account",
+  "/api/health/route": "/api/health",
+  "/cart/page": "/cart",
+  "/category/[slug]/[subcategory]/page": "/category/[slug]/[subcategory]",
+  "/category/[slug]/page": "/category/[slug]",
+  "/offers/page": "/offers",
+  "/page": "/",
+  "/product/[slug]/page": "/product/[slug]",
+  "/search/page": "/search"
+}

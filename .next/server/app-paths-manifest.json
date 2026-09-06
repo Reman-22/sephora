@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/account/page": "app/account/page.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/cart/page": "app/cart/page.js",
+  "/category/[slug]/[subcategory]/page": "app/category/[slug]/[subcategory]/page.js",
+  "/category/[slug]/page": "app/category/[slug]/page.js",
+  "/offers/page": "app/offers/page.js",
+  "/page": "app/page.js",
+  "/product/[slug]/page": "app/product/[slug]/page.js",
+  "/search/page": "app/search/page.js"
+}
