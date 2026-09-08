@@ -4,6 +4,8 @@ import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 import { CHOSEN_FOR_YOU, APP_EARLY_ACCESS, NEW_ARRIVALS } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 const ALL_PRODUCTS = [...CHOSEN_FOR_YOU, ...APP_EARLY_ACCESS, ...NEW_ARRIVALS];
 
 interface SearchPageProps {
