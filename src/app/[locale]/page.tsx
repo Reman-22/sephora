@@ -8,14 +8,25 @@ import { BeautyInsiderRewards } from "@/components/home/BeautyInsiderRewards";
 import { QuickLinksBanner } from "@/components/home/QuickLinksBanner";
 import { PaymentBanner } from "@/components/home/PaymentBanner";
 import { Footer } from "@/components/footer/Footer";
+import { getMessages } from "next-intl/server";
+import { locales } from "@/i18n";
 
-export const dynamic = "force-static";
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
     <>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {messages.common.skipToContent}
       </a>
       <Header />
       <main id="main-content" tabIndex={-1}>

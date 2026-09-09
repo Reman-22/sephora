@@ -16,6 +16,8 @@ export function UtilityBar() {
   const [regionOpen, setRegionOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState(REGIONS[0]);
   const regionRef = useRef<HTMLDivElement>(null);
+  const currentLocale = typeof window !== "undefined" ? (window.location.pathname.split("/")[1] || "en") : "en";
+  const otherLocale = currentLocale === "en" ? "ar" : "en";
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -26,6 +28,11 @@ export function UtilityBar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const toggleLanguage = () => {
+    const newPath = window.location.pathname.replace(`/${currentLocale}`, `/${otherLocale}`);
+    window.location.href = newPath;
+  };
 
   return (
     <div className="bg-[#FAFAFA] border-b border-neutral-200">
@@ -103,6 +110,26 @@ export function UtilityBar() {
               Services & Events
             </Link>
           </div>
+
+          {/* Language Toggle Button */}
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            className="group flex items-center gap-1.5 rounded-full bg-neutral-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-neutral-900 transition-all hover:bg-black hover:text-white"
+            title={`Switch to ${otherLocale === "en" ? "Arabic" : "English"}`}
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M2 12h20" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M12 2c2.5 2.5 4 6 4 10s-1.5 7.5-4 10" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M12 2c-2.5 2.5-4 6-4 10s1.5 7.5 4 10" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M10 10c-1.5-1-3-1.5-4-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M14 10c1.5-1 3-1.5 4-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="8" cy="14" r="1" fill="currentColor" />
+              <circle cx="16" cy="14" r="1" fill="currentColor" />
+            </svg>
+            <span>{currentLocale === "en" ? "EN" : "عربي"}</span>
+          </button>
         </div>
       </div>
     </div>
