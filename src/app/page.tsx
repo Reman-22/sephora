@@ -9,8 +9,6 @@ import { QuickLinksBanner } from "@/components/home/QuickLinksBanner";
 import { PaymentBanner } from "@/components/home/PaymentBanner";
 import { Footer } from "@/components/footer/Footer";
 
-export const dynamic = "force-static";
-
 export default function HomePage() {
   return (
     <>
