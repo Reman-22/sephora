@@ -1,2 +1,2 @@
-:HL["/sephora/_next/static/chunks/0qfbbwhpysewg.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"offers","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"N19tgOE27fvla3x0MyGWY"}
+:HL["/sephora/_next/static/chunks/0qcoat5jr-s00.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"offers","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"rjMfMv8lOQKRGIWYi4Za0"}
