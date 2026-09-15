@@ -7,6 +7,7 @@ import { ProductHighlights } from "@/components/product/ProductHighlights";
 import { ProductAccordions } from "@/components/product/ProductAccordions";
 import { ProductRecommendations } from "@/components/product/ProductRecommendations";
 import { findProductDetails } from "@/lib/product-data";
+import { CHOSEN_FOR_YOU, APP_EARLY_ACCESS, NEW_ARRIVALS, SELLING_FAST } from "@/lib/data";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -119,10 +120,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 }
 
 export function generateStaticParams() {
-  // In production, generate for all product slugs
-  return [
-    { slug: "jo-malone-english-pear" },
-    { slug: "fenty-pro-filt" },
-    { slug: "le-labo-santal-33" },
-  ];
+  const allProducts = [...CHOSEN_FOR_YOU, ...APP_EARLY_ACCESS, ...NEW_ARRIVALS, ...SELLING_FAST];
+  return allProducts.map((product) => ({ slug: product.id }));
 }
